@@ -1,0 +1,171 @@
+:root {
+    --coral: rgb(255, 95, 73);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    color: var(--coral);
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--coral);
+    outline-offset: 3px;
+}
+
+header h1 {
+    background-color: var(--coral);
+    color: white;
+    font-size: 4rem;
+    font-weight: normal;
+    font-family: 'Anton', impact, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+header nav {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--coral);
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+}
+
+header nav li {
+    text-align: center;
+}
+
+header nav a:hover, header nav a:focus-visible {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px gray;
+}
+
+.frase {
+    margin-top: 80px;
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 2em;
+    word-spacing: 12px;
+}
+
+.resalta {
+    color: var(--coral);
+    font-style: italic;
+}
+
+.pasos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: clamp(20px, 6vw, 80px);
+    margin-top: 10vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    list-style: none;
+    counter-reset: paso;
+}
+
+.pasos li {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.3s;
+}
+
+.pasos li::before {
+    counter-increment: paso;
+    content: "0" counter(paso);
+    font-size: 2em;
+    color: var(--coral);
+}
+
+.pasos li img {
+    max-width: 60%;
+    height: auto;
+}
+
+.pasos li:hover {
+    box-shadow: 2px 2px 4px 2px gray;
+}
+
+/* 4. Página de acceso: usuarios.html */
+
+.info {
+    margin-top: 40px;
+    height: 70vh;
+    background-image: url("imagenes/niños.jpg");
+    background-size: cover;
+    padding-top: 80px;
+}
+
+.inscripcion {
+    background-color: var(--coral);
+    width: 150px;
+    height: 200px;
+    margin-left: 100px;
+    padding-top: 60px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.inscripcion input,
+.inscripcion button {
+    font-family: inherit;
+    border-radius: 4px;
+    width: 80px;
+    height: 30px;
+}
+
+.der {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.der a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 700px) {
+    header nav ul li {
+        width: 100%;
+    }
+
+    .pasos {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5vh;
+    }
+
+    .inscripcion {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pasos li {
+        transition: none;
+    }
+}
