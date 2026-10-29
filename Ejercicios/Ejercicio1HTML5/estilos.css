@@ -1,0 +1,94 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-formulario {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.encabezado-formulario {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.encabezado-formulario h1 {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 1.75rem;
+}
+
+.encabezado-formulario p {
+    color: #64748b;
+    margin-top: 4px;
+}
+
+fieldset {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    border-color: #ffffff;
+}
+
+legend {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2563eb;
+    padding: 0 8px;
+}
+
+label {
+    display: block;
+    color: #334155;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 6px;
+}
+
+input, textarea, select {
+    width: 100%;
+    min-height: 44px;
+    padding: 12px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    color: #334155;
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea {
+    resize: vertical;
+    height: auto;
+}
+
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+    border-color: #6366f1;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+    background-color: #ffffff;
+}
+
+input:required:user-valid,textarea:required:user-valid,select:required:user-valid {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+}
