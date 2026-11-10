@@ -63,6 +63,11 @@ label {
     margin-bottom: 6px;
 }
 
+
+/* ==========================================================================
+   5. ESTILO DE LOS CONTROLES DEL FORMULARIO (INPUT, TEXTAREA, SELECT)
+   ========================================================================== */
+
 input, textarea, select {
     width: 100%;
     min-height: 44px;
@@ -81,6 +86,10 @@ textarea {
     height: auto;
 }
 
+/* ==========================================================================
+   6. ESTILO CUANDO UN CAMPO RECIBE EL FOCO
+   ========================================================================== */
+
 input:focus-visible, textarea:focus-visible, select:focus-visible {
     border-color: #6366f1;
     outline: none;
@@ -88,7 +97,67 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     background-color: #ffffff;
 }
 
+/* ==========================================================================
+   7. VALIDACIÓN VISUAL DE LOS CAMPOS
+   ========================================================================== */
+
+/* Campos requeridos y válidos */
 input:required:user-valid,textarea:required:user-valid,select:required:user-valid {
     border-color: #22c55e;
     box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+}
+
+/* Campos requeridos e inválidos */
+input:required:user-invalid,textarea:required:user-invalid,select:required:user-invalid {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+}
+
+
+/* ==========================================================================
+   8 Y 9. BOTÓN DE ENVÍO Y EFECTOS INTERACTIVOS
+   ========================================================================== */
+   
+.btn-enviar {
+    width: 100%;
+    padding: 14px 24px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    background: linear-gradient(to right, #2563eb, #6366f1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al pasar el ratón */
+.btn-enviar:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Al hacer clic */
+.btn-enviar:active {
+    transform: translateY(0);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   10. DISEÑO ADAPTABLE (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor-formulario {
+        width: 100%;
+        padding: 15px;
+    }
+
+    fieldset {
+        padding: 15px;
+    }
 }
