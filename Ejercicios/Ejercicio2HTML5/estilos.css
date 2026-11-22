@@ -1,0 +1,336 @@
+/* ==========================================================================
+   1. FUENTES PERSONALIZADAS CON @font-face (según apuntes)
+   ========================================================================== */
+@font-face {
+    font-family: 'BallparkWeiner';
+    src: url('fonts/ballpark.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoMono-Regular';
+    src: url('fonts/RobotoMono-Regular.ttf');
+}
+
+/* ==========================================================================
+   2. INICIALIZACIÓN Y ESTILOS GENERALES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* width y height incluyen padding y borde */
+}
+
+img, video {
+    display: block;
+    max-width: 100%;
+}
+
+/* body define los estilos heredables principales */
+body {
+    font-family: 'RobotoMono-Regular', monospace;
+    color: #181818;
+    font-size: 13px;
+    line-height: 1.5;
+    background-image: url('images/yellow_background.png');
+    background-repeat: repeat;
+}
+
+#contenedor {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* ==========================================================================
+   3. CABECERA (<header>) Y NAVEGACIÓN (<nav>)
+   CORREGIDO: el header organiza en columna (títulos arriba y nav debajo)
+   ========================================================================== */
+header {
+    display: flex;
+    flex-direction: column; /* Títulos arriba y nav debajo, como en el enunciado */
+    border-bottom: 3px solid #760001;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-family: 'BallparkWeiner', cursive;
+    color: #760001;
+    font-size: 38px;
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+header h2 {
+    font-size: 16px;
+    font-style: italic; /* Cursiva como en "Diarios de viaje" */
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* Selector de hijo directo (nav > a) y pseudoclases según los apuntes */
+nav > a {
+    margin-right: 20px;
+    padding-bottom: 3px;
+    text-decoration: none;
+    color: #181818;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav > a:link,
+nav > a:visited,
+nav > a:active {
+    color: #181818;
+    text-decoration: none;
+}
+
+/* Al señalar vínculo, color #760001 según el enunciado */
+nav > a:hover {
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+/* ==========================================================================
+   4. BANNER (<figure class="banner">)
+   ========================================================================== */
+.banner {
+    position: relative;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px #1c1a19;
+}
+
+.banner img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.banner figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(24, 24, 24, 0.8); /* Color RGBA con transparencia */
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.boton {
+    background-color: #760001;
+    color: #ffffff;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   5. CONTENIDO PRINCIPAL (<main>), ARTÍCULOS, FORMULARIO Y <aside>
+   ========================================================================== */
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #760001;
+    padding-bottom: 25px;
+}
+
+#contenido_principal {
+    width: 65%;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+/* Alinea el mini icono y el texto del h1 en fila */
+article h1,
+#contacto h1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Clase para el mini icono de los encabezados */
+.icono_h1 {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.fila_campo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.fila_campo label {
+    width: 120px;
+    padding-top: 4px;
+}
+
+.fila_campo input,
+.fila_campo textarea {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    font-family: inherit;
+    color: #181818;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+input:user-invalid {
+    border-color: #dc2626;
+}
+
+input:user-valid {
+    border-color: #16a34a;
+}
+
+/* Barra lateral <aside> */
+aside {
+    width: 31%;
+    background-color: #760001;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #1c1a19;
+    font-size: 12px;
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+aside h1 {
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+aside img {
+    margin: 0 auto 12px auto;
+    border: 1px solid #181818;
+    width: 140px;
+}
+
+aside p {
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   6. PIE DE PÁGINA (<footer>)
+   ========================================================================== */
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+.bloque_footer {
+    width: 23%;
+}
+
+.bloque_footer h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.galeria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 140px;
+}
+
+.galeria img {
+    width: 65px;
+    height: 65px;
+    margin: 0 5px 5px 0;
+    border: 1px solid #181818;
+    object-fit: cover;
+}
+
+footer ul {
+    list-style-type: square;
+    padding-left: 15px;
+}
+
+footer ul li {
+    margin-bottom: 5px;
+}
+
+footer ul a {
+    color: #760001;
+    text-decoration: none;
+}
+
+footer ul a:hover {
+    text-decoration: underline;
+}
+
+footer video {
+    width: 180px;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   7. MEDIA QUERY PARA PANTALLAS PEQUEÑAS (según apuntes)
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+    #contenedor {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #contenido_principal,
+    aside {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .bloque_footer {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+}

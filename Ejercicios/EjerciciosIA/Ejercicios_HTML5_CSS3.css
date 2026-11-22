@@ -1,0 +1,448 @@
+/* =========================================================
+   ESTILOS GENERALES Y NAVEGACIÓN DEL DOCUMENTO DE EJERCICIOS
+   ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background: #f2f4f7;
+}
+
+.cabecera {
+    background: #202b3c;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.cabecera h1 {
+    margin-bottom: 8px;
+}
+
+.indice {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.indice a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.indice a:hover {
+    background: white;
+    color: #202b3c;
+}
+
+main {
+    max-width: 1150px;
+    margin: 30px auto;
+    padding: 0 18px;
+}
+
+.bloque-ejercicio {
+    background: white;
+    margin-bottom: 35px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.bloque-ejercicio h2 {
+    color: #1f4e79;
+    margin-bottom: 18px;
+}
+
+.enunciado {
+    background: #eef5fb;
+    border-left: 5px solid #287271;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+}
+
+.enunciado h3 {
+    margin-bottom: 8px;
+}
+
+.enunciado ol {
+    padding-left: 22px;
+}
+
+.enunciado li {
+    margin: 5px 0;
+}
+
+details {
+    margin-top: 15px;
+    border: 1px solid #ccd5df;
+    border-radius: 6px;
+    padding: 12px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #1f4e79;
+}
+
+pre {
+    overflow-x: auto;
+    background: #f1f3f5;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.pie-general {
+    text-align: center;
+    background: #202b3c;
+    color: white;
+    padding: 20px;
+}
+
+/* =========================================================
+   EJERCICIO 1: TIENDA Y FLEXBOX
+   ========================================================= */
+.demo-tienda {
+    background: #f2f2f2;
+    padding-bottom: 25px;
+}
+
+.tienda-header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+.tienda-nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: #444;
+    padding: 14px;
+}
+
+.tienda-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 12px;
+}
+
+.tienda-nav a:hover {
+    color: #ffb36b;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px;
+}
+
+.tarjeta {
+    width: 260px;
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0,0,0,.2);
+    transition: transform .3s ease;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.tarjeta h4 {
+    margin: 12px 0 6px;
+}
+
+.tarjeta p {
+    margin: 7px 0;
+}
+
+.tarjeta .precio {
+    color: #c62828;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.tarjeta .boton {
+    display: block;
+    margin-top: 12px;
+    padding: 9px;
+    color: white;
+    background: #222;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.tarjeta .boton:hover {
+    background: coral;
+}
+
+/* =========================================================
+   EJERCICIO 2: FORMULARIO
+   ========================================================= */
+.demo-formulario {
+    max-width: 540px;
+    margin: 20px auto;
+    padding: 25px;
+    background: linear-gradient(to right, #dbeafe, #e9d5ff);
+    border-radius: 10px;
+}
+
+.demo-formulario > h3 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.demo-formulario form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,.2);
+}
+
+.demo-formulario fieldset {
+    border: 1px solid #ccc;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+}
+
+.demo-formulario legend {
+    font-weight: bold;
+    padding: 4px;
+}
+
+.demo-formulario label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.demo-formulario input:not([type="checkbox"]),
+.demo-formulario select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.demo-formulario input:focus,
+.demo-formulario select:focus {
+    outline: none;
+    border: 2px solid #2563eb;
+    background: #f0f8ff;
+}
+
+.demo-formulario .condiciones {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 15px 0;
+}
+
+.demo-formulario .condiciones label {
+    margin: 0;
+}
+
+.demo-formulario button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.demo-formulario button:hover {
+    background: #1e40af;
+}
+
+/* =========================================================
+   EJERCICIO 3: GRID, ANIMACIÓN Y FILTROS
+   ========================================================= */
+.demo-academia {
+    background: linear-gradient(to bottom, #eee, #c4b5fd);
+}
+
+.academia-header {
+    text-align: center;
+    padding: 30px;
+    background: #3b0764;
+    color: white;
+}
+
+.academia-header h3 {
+    font-size: 28px;
+    animation: cambiar 4s infinite alternate;
+}
+
+.academia-header p {
+    margin-top: 8px;
+}
+
+@keyframes cambiar {
+    from {
+        color: white;
+        transform: scale(1);
+    }
+    to {
+        color: #f0abfc;
+        transform: scale(1.08);
+    }
+}
+
+.academia-layout {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 22px;
+    padding: 25px;
+}
+
+.academia-nav {
+    background: #3b0764;
+    padding: 15px;
+    border-radius: 9px;
+}
+
+.academia-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: background-color .4s;
+}
+
+.academia-nav a:hover {
+    background: #a855f7;
+    border-radius: 6px;
+}
+
+.academia-main > h3 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.clase {
+    background: white;
+    padding: 13px;
+    border-radius: 9px;
+    text-align: center;
+    box-shadow: 3px 3px 10px rgba(0,0,0,.2);
+    transition: transform .5s, box-shadow .5s;
+}
+
+.clase:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px rgba(0,0,0,.4);
+}
+
+.clase img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter .5s;
+}
+
+.clase img:hover {
+    filter: grayscale(0%);
+}
+
+.clase h4 {
+    margin: 10px 0 5px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media screen and (max-width: 700px) {
+    .tienda-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .academia-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .academia-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .academia-nav a {
+        margin: 0;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .demo-formulario {
+        padding: 12px;
+    }
+
+    .demo-formulario form {
+        padding: 15px;
+    }
+
+    .bloque-ejercicio {
+        padding: 15px;
+    }
+}
+
+/* Respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

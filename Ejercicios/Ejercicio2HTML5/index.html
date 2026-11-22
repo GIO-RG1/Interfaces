@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Necesario para media queries y diseño adaptable según los apuntes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminante por el mundo</title>
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Contenedor principal centrado -->
+    <div id="contenedor">
+
+        <!-- Cabecera: títulos arriba y navegación (<nav>) debajo, tal como se ve en el ejercicio -->
+        <header>
+            <h1>Caminante por el mundo</h1>
+            <h2>Diarios de viaje</h2>
+
+            <!-- Menú de navegación justo debajo del subtítulo -->
+            <nav>
+                <a href="#">FOTOGRAFÍAS</a>
+                <a href="#">VÍDEOS</a>
+                <a href="#">CONTACTO</a>
+                <a href="#">SUSCRÍBETE</a>
+            </nav>
+        </header>
+
+        <!-- Banner con figure.banner y figcaption -->
+        <figure class="banner">
+            <img src="images/sanfrancisco.jpg" alt="Puente Golden Gate">
+            <figcaption>
+                <span>Viajar... no es trasladarse de un lugar a otro como define la RAE. Viajar es principalmente sentir...</span>
+                <a href="#" class="boton">Ver más</a>
+            </figcaption>
+        </figure>
+
+        <!-- Contenido principal único de la página -->
+        <main>
+            <section id="contenido_principal">
+                <!-- Mini icono añadido junto a "ALGO TENDRÉ QUE CONTAR" (ajusta el nombre del archivo si es distinto) -->
+                <article>
+                    <h1>
+                        <img src="images/pin.png" alt="Icono" class="icono_h1">
+                        ALGO TENDRÉ QUE CONTAR
+                    </h1>
+                    <p>Yo "siento" cientos de cosas cada vez que piso un lugar diferente y supongo que a todos los que os gusta viajar os sucede lo mismo. Cuando llego a un lugar nuevo todos mis sentidos comienzan a experimentar con todo lo que me rodea llegando incluso hasta la locura. Una locura muy placentera.</p>
+                </article>
+
+                <!-- Mini icono añadido junto a "POR QUÉ VIAJO" -->
+                <article>
+                    <h1>
+                        <img src="images/pin.png" alt="Icono" class="icono_h1">
+                        POR QUÉ VIAJO
+                    </h1>
+                    <p>Hay quien lo hace para descubrir. Otros, para aprender, para huir de la rutina o incluso para olvidar. Para comprobar que el mundo es diferente de cómo te lo cuentan en los telediarios. Para sentirse más libre o para huir de la zona de confort. Hay quienes por desgracia solo viajan para confirmar sus prejuicios o para demostrar que son "mejores viajeros" que otros. Pero la inmensa mayoría lo hace para todo lo contrario: para comprender, para intentar ser mejores personas, para darse una cura de humildad.</p>
+                </article>
+
+                <!-- Mini icono añadido también en CONTACTA según la imagen del ejercicio -->
+                <section id="contacto">
+                    <h1>
+                        <img src="images/pin.png" alt="Icono" class="icono_h1">
+                        CONTACTA
+                    </h1>
+                    <form action="#" method="post">
+                        <div class="fila_campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="fila_campo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="fila_campo">
+                            <label for="web">Sitio web</label>
+                            <input type="url" id="web" name="web">
+                        </div>
+
+                        <div class="fila_campo">
+                            <label for="comentarios">Comentarios</label>
+                            <textarea id="comentarios" name="comentarios" rows="5" maxlength="500"></textarea>
+                        </div>
+
+                        <button type="submit" class="boton">Dejar comentario</button>
+                    </form>
+                </section>
+            </section>
+
+            <!-- Barra lateral complementaria (<aside>) -->
+            <aside>
+                <h1>SOBRE EL AUTOR</h1>
+                <img src="images/autor.jpg" alt="Foto de Patxi Martínez">
+                <p>Me voy a presentar: Me llamo Patxi Martínez. Nací en Baracaldo el 23 de Noviembre de 1985.</p>
+                <p>Este es un blog con mis experiencias y vivencias de mis viajes por el mundo.</p>
+            </aside>
+        </main>
+
+        <!-- Pie de página (<footer>) -->
+        <footer>
+            <div class="bloque_footer">
+                <h3>MI ÚLTIMA ENTRADA</h3>
+                <p>Uganda!!</p>
+                <p>12/11 23:12</p>
+            </div>
+
+            <div class="bloque_footer">
+                <h3>MIS FOTOGRAFÍAS</h3>
+                <div class="galeria">
+                    <img src="images/pic1.jpg" alt="Fotografía 1">
+                    <img src="images/pic2.jpg" alt="Fotografía 2">
+                    <img src="images/pic3.jpg" alt="Fotografía 3">
+                    <img src="images/pic4.jpg" alt="Fotografía 4">
+                </div>
+            </div>
+
+            <div class="bloque_footer">
+                <h3>MIS AMIGOS</h3>
+                <ul>
+                    <li><a href="#">Pupi el viajero</a></li>
+                    <li><a href="#">El Sr. Bpackets</a></li>
+                    <li><a href="#">Julia Arrow</a></li>
+                    <li><a href="#">Piston travel</a></li>
+                </ul>
+            </div>
+
+            <div class="bloque_footer">
+                <h3>MIS VÍDEOS</h3>
+                <video controls preload="metadata">
+                    <source src="tajmahalvideo.mp4" type="video/mp4">
+                </video>
+                <p>El Taj Mahal</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

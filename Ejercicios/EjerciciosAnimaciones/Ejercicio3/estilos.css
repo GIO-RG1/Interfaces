@@ -1,0 +1,219 @@
+/* ==========================================================================
+   1. INICIALIZACIÓN DE ESTILOS (según apuntes de repaso y CSS moderno)
+   ========================================================================== */
+/* Selector universal (*) para inicializar márgenes, padding y modelo de caja */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* width y height incluyen padding y borde */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   2. ANIMACIÓN DE CABECERA H1 (@keyframes y propiedades de animación)
+   1s de retraso, 5s de duración, 2 repeticiones alternas (alternate)
+   ========================================================================== */
+@keyframes animacion_h1 {
+    from {
+        background-color: #ffffff;
+        color: #2b1640;
+        padding-right: 0px;
+    }
+    to {
+        background-color: #2b1640;
+        color: #ffffff;
+        padding-right: 20px;
+    }
+}
+
+/* ==========================================================================
+   3. BODY: FUENTE MANROPE, TAMAÑO 20PX, ANCHO 80%, MIN-HEIGHT 600PX,
+      COLOR #2B1640, FONDO RADIAL-GRADIENT SIN REPETIR Y GRID DE ÁREAS
+   ========================================================================== */
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    color: #2b1640;
+    width: 80%;
+    min-height: 600px;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background-image: radial-gradient(at top left, #fff, #b9a6f0);
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        "nav intro"
+        "content content";
+    column-gap: 50px;
+    align-items: start;
+}
+
+/* ==========================================================================
+   4. HEADER Y H1 (FUENTE SYNE, PESO 800, ANCHO 40%, COLOR #2B1640)
+   ========================================================================== */
+header {
+    grid-area: header;
+    padding-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    width: 40%;
+    color: #2b1640;
+    animation-name: animacion_h1;
+    animation-duration: 5s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-delay: 1s;
+}
+
+/* ==========================================================================
+   5. MENÚ DE NAVEGACIÓN (<nav>) Y TRANSICIÓN DE 3S AL SEÑALAR (:hover)
+   ========================================================================== */
+nav {
+    grid-area: nav;
+    background-color: #2b1640;
+    color: #ffffff;
+    height: 310px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: color 3s linear, background-color 3s linear, border-radius 3s linear;
+}
+
+/* Al señalar cada opción: fondo #b9a6f0, texto #2b1640 y radio superior derecho 100px */
+nav a:hover {
+    background-color: #b9a6f0;
+    color: #2b1640;
+    border-top-right-radius: 100px;
+}
+
+/* ==========================================================================
+   6. SECCIÓN INTRO: GRID CON FILAS 200PX Y 140PX, GAP 10PX, ALTO 350PX
+   ========================================================================== */
+#intro {
+    grid-area: intro;
+    height: 350px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: 200px 140px;
+    gap: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+/* Imagen: alto 200px, ancho hasta 400px sin desbordar la columna,
+   borde sup. derecho 100px, escala de grises y desenfoque de 2px */
+#intro img {
+    max-width: 400px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-right-radius: 100px;
+    filter: grayscale(1) blur(2px);
+    transition: transform 3s ease 1s, filter 3s ease 1s;
+}
+
+#intro img:hover {
+    transform: translate(50px, 0px) scale(1.5);
+    filter: grayscale(0) blur(0px);
+}
+
+/* Caja morada de redes sociales ajustada a la segunda fila del grid */
+.redes {
+    background-color: #2b1640;
+    color: #ffffff;
+    height: 140px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.redes p {
+    font-size: 16px;
+}
+
+/* Reseteamos la regla general de nav para el nav interno de redes sociales */
+.redes nav {
+    grid-area: auto;
+    background-color: transparent;
+    box-shadow: none;
+    height: auto;
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: block;
+}
+
+/* Lista de redes sociales en fila, centrada y sin viñetas usando Flexbox */
+.redes-sociales {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.redes-sociales a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0;
+    transition: none;
+}
+
+.redes-sociales a:hover {
+    background-color: transparent;
+    color: #b9a6f0;
+    border-top-right-radius: 0;
+}
+
+/* ==========================================================================
+   7. SECCIÓN CONTENT Y H2 (SOMBRA DE TEXTO 5PX, NEGRO ALPHA 0.25, DIFUMINADO 5PX)
+   ========================================================================== */
+#content {
+    grid-area: content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+#content article {
+    width: 48%;
+}
+
+#content h2 {
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    margin-bottom: 8px;
+}

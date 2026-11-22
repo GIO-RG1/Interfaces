@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios HTML5 y CSS3</title>
+    <link rel="stylesheet" href="Ejercicios_HTML5_CSS3.css">
+</head>
+<body>
+    <header class="cabecera">
+        <h1>Ejercicios prácticos de HTML5 y CSS3</h1>
+        <p>Tres ejercicios resueltos para practicar antes del examen</p>
+        <nav class="indice">
+            <a href="#ejercicio1">Ejercicio 1</a>
+            <a href="#ejercicio2">Ejercicio 2</a>
+            <a href="#ejercicio3">Ejercicio 3</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- EJERCICIO 1 -->
+        <section id="ejercicio1" class="bloque-ejercicio">
+            <h2>Ejercicio 1. Tienda de zapatillas: Flexbox y tarjetas</h2>
+            <div class="enunciado">
+                <h3>Enunciado</h3>
+                <ol>
+                    <li>Crear una cabecera con el título de la tienda y un menú horizontal con tres enlaces.</li>
+                    <li>Mostrar tres tarjetas de productos con imagen, nombre, descripción, precio y enlace de compra.</li>
+                    <li>Distribuir las tarjetas con Flexbox y permitir que bajen de línea.</li>
+                    <li>Aplicar fondo blanco, bordes redondeados y sombras a las tarjetas.</li>
+                    <li>Al pasar el ratón por una tarjeta, debe aumentar ligeramente de tamaño.</li>
+                    <li>En pantallas inferiores a 700 px, las tarjetas deben organizarse verticalmente.</li>
+                </ol>
+            </div>
+
+            <div class="demo-tienda">
+                <header class="tienda-header"><h3>SPORT SHOES</h3></header>
+                <nav class="tienda-nav">
+                    <a href="#ejercicio1">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#ejercicio2">Contacto</a>
+                </nav>
+                <section id="productos" class="productos">
+                    <article class="tarjeta">
+                        <img src="https://placehold.co/600x400?text=Modelo+Sport" alt="Imagen de zapatilla deportiva">
+                        <h4>Modelo Sport</h4>
+                        <p>Zapatilla cómoda para el día a día.</p>
+                        <p class="precio">89 €</p>
+                        <a class="boton" href="#ejercicio1">Comprar</a>
+                    </article>
+                    <article class="tarjeta">
+                        <img src="https://placehold.co/600x400?text=Modelo+Urban" alt="Imagen de zapatilla urbana">
+                        <h4>Modelo Urban</h4>
+                        <p>Diseño moderno y elegante.</p>
+                        <p class="precio">75 €</p>
+                        <a class="boton" href="#ejercicio1">Comprar</a>
+                    </article>
+                    <article class="tarjeta">
+                        <img src="https://placehold.co/600x400?text=Modelo+Running" alt="Imagen de zapatilla de running">
+                        <h4>Modelo Running</h4>
+                        <p>Perfecta para hacer deporte.</p>
+                        <p class="precio">99 €</p>
+                        <a class="boton" href="#ejercicio1">Comprar</a>
+                    </article>
+                </section>
+            </div>
+            <details>
+                <summary>Ver solución HTML</summary>
+                <pre><code>&lt;header&gt;
+  &lt;h1&gt;SPORT SHOES&lt;/h1&gt;
+&lt;/header&gt;
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Productos&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;main&gt;
+  &lt;h2&gt;Nuestros productos&lt;/h2&gt;
+  &lt;section class="productos"&gt;
+    &lt;article class="tarjeta"&gt;
+      &lt;img src="imagenes/zapatilla1.jpg" alt="Zapatilla deportiva"&gt;
+      &lt;h3&gt;Modelo Sport&lt;/h3&gt;
+      &lt;p&gt;Zapatilla cómoda para el día a día.&lt;/p&gt;
+      &lt;p class="precio"&gt;89 €&lt;/p&gt;
+      &lt;a href="#"&gt;Comprar&lt;/a&gt;
+    &lt;/article&gt;
+    &lt;!-- Repetir article para los otros dos productos --&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;© 2026 Sport Shoes&lt;/footer&gt;</code></pre>
+            </details>
+            <details>
+                <summary>Ver solución CSS</summary>
+                <pre><code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+.tienda-header {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+.tienda-nav {
+  display: flex;
+  justify-content: space-around;
+  background: #444;
+  padding: 15px;
+}
+.tienda-nav a {
+  color: white;
+  text-decoration: none;
+}
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px;
+}
+.tarjeta {
+  width: 280px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0,0,0,.2);
+  transition: transform .3s ease;
+}
+.tarjeta:hover { transform: scale(1.05); }
+.tarjeta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.precio { color: red; font-size: 22px; font-weight: bold; }
+.boton {
+  display: block;
+  padding: 10px;
+  margin-top: 15px;
+  background: #222;
+  color: white;
+  text-decoration: none;
+}
+.boton:hover { background: coral; }
+@media screen and (max-width: 700px) {
+  .tienda-nav, .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+}</code></pre>
+            </details>
+        </section>
+
+        <!-- EJERCICIO 2 -->
+        <section id="ejercicio2" class="bloque-ejercicio">
+            <h2>Ejercicio 2. Formulario de inscripción</h2>
+            <div class="enunciado">
+                <h3>Enunciado</h3>
+                <ol>
+                    <li>Crear un formulario de inscripción a un gimnasio.</li>
+                    <li>Incluir nombre, apellidos, correo, teléfono y fecha de nacimiento.</li>
+                    <li>Añadir un select para elegir una actividad.</li>
+                    <li>Incluir una casilla obligatoria para aceptar las condiciones.</li>
+                    <li>Centrar el formulario, aplicar un degradado al fondo, sombra y bordes redondeados.</li>
+                    <li>Los campos deben cambiar de borde al recibir el foco y el formulario debe adaptarse a móvil.</li>
+                </ol>
+            </div>
+
+            <div class="demo-formulario">
+                <h3>Inscripción al gimnasio</h3>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Datos personales</legend>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" placeholder="correo@email.com" required>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
+                        <label for="fecha">Fecha de nacimiento:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Actividad</legend>
+                        <label for="actividad">Selecciona una actividad:</label>
+                        <select id="actividad" name="actividad" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="fitness">Fitness</option>
+                            <option value="yoga">Yoga</option>
+                            <option value="natacion">Natación</option>
+                        </select>
+                    </fieldset>
+                    <div class="condiciones">
+                        <input type="checkbox" id="aceptar" name="aceptar" required>
+                        <label for="aceptar">Acepto las condiciones</label>
+                    </div>
+                    <button type="submit">Inscribirme</button>
+                </form>
+            </div>
+            <details>
+                <summary>Ver solución HTML</summary>
+                <pre><code>&lt;form action="#" method="post"&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Datos personales&lt;/legend&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" name="nombre" required&gt;
+    &lt;label for="email"&gt;Correo:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+  &lt;/fieldset&gt;
+  &lt;label for="actividad"&gt;Actividad:&lt;/label&gt;
+  &lt;select id="actividad" name="actividad" required&gt;
+    &lt;option value=""&gt;Selecciona&lt;/option&gt;
+    &lt;option value="yoga"&gt;Yoga&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type="checkbox" id="aceptar" required&gt;
+  &lt;label for="aceptar"&gt;Acepto las condiciones&lt;/label&gt;
+  &lt;button type="submit"&gt;Inscribirme&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </details>
+            <details>
+                <summary>Ver solución CSS</summary>
+                <pre><code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.demo-formulario {
+  max-width: 500px;
+  margin: 25px auto;
+  padding: 20px;
+  background: linear-gradient(to right, #dbeafe, #e9d5ff);
+}
+.demo-formulario form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,.2);
+}
+fieldset {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+label { display: block; margin: 10px 0 5px; }
+input:not([type="checkbox"]), select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+input:focus, select:focus {
+  outline: none;
+  border: 2px solid blue;
+  background: #f0f8ff;
+}
+.condiciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.condiciones label { margin: 0; }
+button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+button:hover { background: #1e40af; }
+@media (max-width: 600px) {
+  .demo-formulario form { padding: 15px; }
+}</code></pre>
+            </details>
+        </section>
+
+        <!-- EJERCICIO 3 -->
+        <section id="ejercicio3" class="bloque-ejercicio">
+            <h2>Ejercicio 3. Academia de baile: Grid, animaciones y filtros</h2>
+            <div class="enunciado">
+                <h3>Enunciado</h3>
+                <ol>
+                    <li>Crear una cabecera con título y subtítulo.</li>
+                    <li>Diseñar un menú vertical a la izquierda y contenido a la derecha.</li>
+                    <li>Mostrar tres tarjetas de clases con CSS Grid.</li>
+                    <li>Las imágenes comenzarán en blanco y negro y recuperarán el color al pasar el ratón.</li>
+                    <li>Las tarjetas aumentarán ligeramente de tamaño y mostrarán sombra al pasar el ratón.</li>
+                    <li>El título tendrá una animación de cambio de color.</li>
+                    <li>En pantallas inferiores a 700 px, el menú pasará arriba y las tarjetas quedarán en una columna.</li>
+                </ol>
+            </div>
+
+            <div class="demo-academia">
+                <header class="academia-header">
+                    <h3>DANCE ACADEMY</h3>
+                    <p>Aprende, disfruta y baila</p>
+                </header>
+                <div class="academia-layout">
+                    <nav class="academia-nav">
+                        <a href="#ejercicio3">Inicio</a>
+                        <a href="#ejercicio3">Clases</a>
+                        <a href="#ejercicio3">Profesores</a>
+                        <a href="#ejercicio3">Contacto</a>
+                    </nav>
+                    <main class="academia-main">
+                        <h3>Nuestras clases</h3>
+                        <section class="galeria">
+                            <article class="clase">
+                                <img src="https://placehold.co/600x400?text=Salsa" alt="Clase de salsa">
+                                <h4>Salsa</h4><p>Aprende a bailar salsa.</p>
+                            </article>
+                            <article class="clase">
+                                <img src="https://placehold.co/600x400?text=Hip+Hop" alt="Clase de hip hop">
+                                <h4>Hip Hop</h4><p>Descubre el baile urbano.</p>
+                            </article>
+                            <article class="clase">
+                                <img src="https://placehold.co/600x400?text=Ballet" alt="Clase de ballet">
+                                <h4>Ballet</h4><p>Mejora tu técnica y postura.</p>
+                            </article>
+                        </section>
+                    </main>
+                </div>
+            </div>
+            <details>
+                <summary>Ver solución HTML</summary>
+                <pre><code>&lt;header&gt;
+  &lt;h1&gt;DANCE ACADEMY&lt;/h1&gt;
+  &lt;p&gt;Aprende, disfruta y baila&lt;/p&gt;
+&lt;/header&gt;
+&lt;div class="pagina"&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Inicio&lt;/a&gt;
+    &lt;a href="#"&gt;Clases&lt;/a&gt;
+    &lt;a href="#"&gt;Profesores&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;main&gt;
+    &lt;h2&gt;Nuestras clases&lt;/h2&gt;
+    &lt;section class="galeria"&gt;
+      &lt;article class="clase"&gt;
+        &lt;img src="imagenes/salsa.jpg" alt="Clase de salsa"&gt;
+        &lt;h3&gt;Salsa&lt;/h3&gt;
+        &lt;p&gt;Aprende a bailar salsa.&lt;/p&gt;
+      &lt;/article&gt;
+      &lt;!-- Repetir article para Hip Hop y Ballet --&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+&lt;/div&gt;</code></pre>
+            </details>
+            <details>
+                <summary>Ver solución CSS</summary>
+                <pre><code>* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body { font-family: Arial, sans-serif; }
+.academia-header {
+  text-align: center;
+  padding: 35px;
+  background: #3b0764;
+  color: white;
+}
+.academia-header h3 {
+  animation: cambiar 4s infinite alternate;
+}
+@keyframes cambiar {
+  from { color: white; transform: scale(1); }
+  to { color: #f0abfc; transform: scale(1.1); }
+}
+.academia-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+.academia-nav {
+  background: #3b0764;
+  padding: 20px;
+}
+.academia-nav a {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+.academia-nav a:hover { background: #a855f7; }
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.clase {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0,0,0,.2);
+  transition: transform .5s, box-shadow .5s;
+}
+.clase:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgba(0,0,0,.4);
+}
+.clase img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter .5s;
+}
+.clase img:hover { filter: grayscale(0%); }
+@media (max-width: 700px) {
+  .academia-layout { grid-template-columns: 1fr; }
+  .galeria { grid-template-columns: 1fr; }
+}</code></pre>
+            </details>
+        </section>
+    </main>
+
+    <footer class="pie-general">
+        <p>Material de práctica HTML5 y CSS3</p>
+    </footer>
+</body>
+</html>
