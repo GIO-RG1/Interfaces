@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="GiorgiSiradze.css">
+</head>
+<body>
+    <div id="contenedor">
+        <header>
+            <h1>Los 50 Mejores restaurantes del mundo</h1>
+            <p>EDICION 2027</p>
+        </header>
+        <main>
+            <section id="seccion_arriba">
+                <h2>Estos son los 4 finalistas</h2>
+                <hr>
+                <div class="galeria">
+                        <figure>
+                            <img src="img/etxebarri.webp">
+                            <figcaption>Asador Etxebarri (Axpe,España)</figcaption>
+                        </figure>
+                         <figure>
+                            <img src="img/gaggan.webp">
+                            <figcaption>Gaggen (Bangkok, Tailandia)</figcaption>
+                        </figure>
+                         <figure>
+                            <img src="img/alchemist.webp">
+                            <figcaption>Alchemist (Copenhague, Dinamarca)</figcaption>
+                        </figure>
+                         <figure>
+                            <img src="img/quintonil.webp">
+                            <figcaption>Quintonil (Ciudad de México, México)</figcaption>
+                        </figure>
+                    </div>
+            </section>
+            <section id="seccion_abajo">
+                <h2>Reserva en los mejores restaurantes 2026</h2>
+                    <hr>
+                <form action="#">
+                    <label for="nomApe">Nombre y apellidos</label>
+                    <input type="text" name="nomApe" id="" placeholder="Nombre y apellidos">
+
+                    <label for="mail">Correo electrónico</label>
+                    <input type="email" name="mail" placeholder="correo@dominio.com">
+
+                    <label for="fReserva">Fecha de la reserva</label>
+                    <input type="date" name="fReserva">
+
+                    <label for="restaurante">Restaurante</label>
+                    <select name="restaurante">
+                        <option value="">Asador Etxebarri</option>
+                        <option value="">Gaggan</option>
+                        <option value="">Alchemist</option>
+                        <option value="">Quintonil</option>
+                    </select>
+                    <fieldset>
+                        <button>Ver disponibilidad</button>
+                    </fieldset>
+                </form>
+
+            </section>
+        </main>
+        <aside>
+            <div class="menu">
+                <h2>Elige uno</h2>
+                <hr>
+                <ul>
+                    <li>Asador Etxebarri</li>
+                    <li>Gaggan</li>
+                    <li>Alchemist</li>
+                    <li>Quintonil</li>
+                </ul>
+            </div>
+            <div class="videos">
+                <h2>Descúbrelos</h2>
+                <hr>
+                <video controls preload="metadata">
+                    <source src="video/Etxebarri.mp4" type="video/mp4">
+                </video>
+                <figcaption>Asador Etxebarri</figcaption>
+                <video controls preload="metadata">
+                    <source src="video/Quintonil.mp4" type="video/mp4">
+                </video>
+                <figcaption>Quintonil</figcaption>
+            </div>
+
+        </aside>
+
+    </div>
+    
+</body>
+</html>
